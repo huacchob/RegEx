@@ -2,7 +2,7 @@
 
 In the script, I used the built-in libraries re and json. The purpose of this script was to take 
 a configuration file from an Audiocodes device, find the VLANs that had GLBP configured on it, 
-in particular, that had an IP address that started with '100.111'. The other information I needed
+in particular, that had an IP address that started with '100'. The other information I needed
 was GLBP ID, the description of the VLAN interface, the VLAN ID, and the GLBP virtual IP.
 
 I used the re library to create regular expressions and filter the config file using the regex. 
