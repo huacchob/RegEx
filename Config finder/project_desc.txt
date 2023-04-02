@@ -1,25 +1,11 @@
---- This is a document that will explain the script ---
+--- This is a document that explains the script ---
 
-In the script, I used the built-in libraries re and json. The purpose of this script was to take 
-a configuration file from an Audiocodes device, find the VLANs that had GLBP configured on it, 
-in particular, that had an IP address that started with '100'. The other information I needed
-was GLBP ID, the description of the VLAN interface, the VLAN ID, and the GLBP virtual IP.
+The script utilizes two built-in libraries in Python: re and json. Its purpose is to extract information from a configuration file of an Audiocodes device. Specifically, the script identifies the VLANs that have GLBP configured with an IP address that begins with '100'. The information required includes GLBP ID, VLAN interface description, VLAN ID, and GLBP virtual IP.
 
-I used the re library to create regular expressions and filter the config file using the regex. 
-The json library was used to make the returned data more readable.
+The re library is used to filter the configuration file using regular expressions. The json library then makes the returned data more readable.
 
-The regular expression I created was to filter through the configuration file, and search for 
-the data I stated above. The expression is prefixed by the r option. This is so the string can be
-processed as a raw string, and the \ not be a special character, for example, \n doesn't mean 
-newline.
+A regular expression was created to filter through the configuration file and search for the aforementioned data. The expression is prefixed by the 'r' option to process the string as a raw string, allowing the '' character not to be treated as a special character, e.g., '\n' doesn't mean newline.
 
-I opened the file where the config file was at, used utf-8 encoding because there were some 
-characters there that ASCII could not understand. Used the the reading mode, because I did not 
-want to make changes to the config file, instead I wanted to push the returned values out to 
-a different file. After grabbing the file, Python had needs to read the file, then apply the 
-regex to the contents of the file, using re's findall() function. I used the flag IGNORECASE 
-just in case there were instances of case mismatches.
+The script opens the configuration file with the 'utf-8' encoding since there were some non-ASCII characters that ASCII could not understand. The reading mode is used to prevent changes to the original file. The file is read, and the regex is applied to its contents using re's 'findall()' function. The 'IGNORECASE' flag is used to handle case mismatches.
 
-I took the returned value, ran it through the json dumps() function to make it look pretty, then 
-I created a new file using the mode 'w'. I wrote the pretty returned text to the new file, the 
-closed the file.
+The returned value is run through the json 'dumps()' function to make it look neat. A new file is created with the 'w' mode, and the returned text is written to it. Finally, the file is closed.
