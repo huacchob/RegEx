@@ -17,5 +17,8 @@ ASCII could not understand. The reading mode is used to prevent changes to the o
 the regex is applied to its contents using re's 'findall()' function. The 'IGNORECASE' flag is used to handle case 
 mismatches.
 
+I'm using the os module to use the filesystem in the script. I am selecting the folder where the configuration 
+files are stored and created new files where the returned data will be stored in.
+
 The returned value is run through the json 'dumps()' function to make it look neat. A new file is created with the 
 'w' mode, and the returned text is written to it. Finally, the file is closed.
