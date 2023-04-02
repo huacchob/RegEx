@@ -1,7 +1,8 @@
 --- This is a document that explains the script ---
 
 The script utilizes two built-in libraries in Python: re and json. Its purpose is to extract information from a 
-configuration file of an Audiocodes device. Specifically, the script identifies the VLANs that have GLBP configured  with an IP address that begins with '100'. The information required includes GLBP ID, VLAN interface description, 
+configuration file of an Audiocodes device. Specifically, the script identifies the VLANs that have GLBP configured 
+with an IP address that begins with '100'. The information required includes GLBP ID, VLAN interface description, 
 VLAN ID, and GLBP virtual IP.
 
 The re library is used to filter the configuration file using regular expressions. The json library then makes the 
