@@ -1,11 +1,20 @@
 --- This is a document that explains the script ---
 
-The script utilizes two built-in libraries in Python: re and json. Its purpose is to extract information from a configuration file of an Audiocodes device. Specifically, the script identifies the VLANs that have GLBP configured with an IP address that begins with '100'. The information required includes GLBP ID, VLAN interface description, VLAN ID, and GLBP virtual IP.
+The script utilizes two built-in libraries in Python: re and json. Its purpose is to extract information from a 
+configuration file of an Audiocodes device. Specifically, the script identifies the VLANs that have GLBP configured  with an IP address that begins with '100'. The information required includes GLBP ID, VLAN interface description, 
+VLAN ID, and GLBP virtual IP.
 
-The re library is used to filter the configuration file using regular expressions. The json library then makes the returned data more readable.
+The re library is used to filter the configuration file using regular expressions. The json library then makes the 
+returned data more readable.
 
-A regular expression was created to filter through the configuration file and search for the aforementioned data. The expression is prefixed by the 'r' option to process the string as a raw string, allowing the '' character not to be treated as a special character, e.g., '\n' doesn't mean newline.
+A regular expression was created to filter through the configuration file and search for the aforementioned data. 
+The expression is prefixed by the 'r' option to process the string as a raw string, allowing the '' character not to 
+be treated as a special character, e.g., '\n' doesn't mean newline.
 
-The script opens the configuration file with the 'utf-8' encoding since there were some non-ASCII characters that ASCII could not understand. The reading mode is used to prevent changes to the original file. The file is read, and the regex is applied to its contents using re's 'findall()' function. The 'IGNORECASE' flag is used to handle case mismatches.
+The script opens the configuration file with the 'utf-8' encoding since there were some non-ASCII characters that 
+ASCII could not understand. The reading mode is used to prevent changes to the original file. The file is read, and 
+the regex is applied to its contents using re's 'findall()' function. The 'IGNORECASE' flag is used to handle case 
+mismatches.
 
-The returned value is run through the json 'dumps()' function to make it look neat. A new file is created with the 'w' mode, and the returned text is written to it. Finally, the file is closed.
+The returned value is run through the json 'dumps()' function to make it look neat. A new file is created with the 
+'w' mode, and the returned text is written to it. Finally, the file is closed.
