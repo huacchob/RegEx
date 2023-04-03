@@ -29,3 +29,4 @@ for o_file in os.listdir(dir):
                     with open(os.path.join(dir, file_name), 'w', encoding='utf-8') as new_n_files:
                         # Input the returned pretty data into the newly created files
                         new_n_files.write(pretty)
+print(os.getcwd())
